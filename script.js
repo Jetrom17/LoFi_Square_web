@@ -57,3 +57,11 @@ prevButton.addEventListener('click', () => {
   currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
   playTrack(currentTrackIndex);
 });
+
+// Dialog
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    const dialog = document.getElementById('download-dialog');
+    dialog.classList.add('show');
+  }, 3000);
+});
