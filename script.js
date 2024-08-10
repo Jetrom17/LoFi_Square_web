@@ -1,9 +1,11 @@
+// Seleciona os elementos do DOM
 const audio = new Audio();
 const playButton = document.getElementById('play');
 const nextButton = document.getElementById('next');
 const prevButton = document.getElementById('prev');
 const trackName = document.getElementById('track-name');
 
+// Lista das faixas
 const tracks = [
   'http://radio.stereoscenic.com/ama-h',
   'http://radio.stereoscenic.com/ama-s',
@@ -17,14 +19,19 @@ const tracks = [
 
 let currentTrackIndex = 0;
 
+// Função para reproduzir a faixa
 function playTrack(index) {
   audio.src = tracks[index];
-  audio.play();
-  trackName.textContent = `Playing ${index + 1}`;
-  playButton.classList.remove('fa-play');
-  playButton.classList.add('fa-pause');
+  audio.play().then(() => {
+    trackName.textContent = `Playing ${index + 1}`;
+    playButton.classList.remove('fa-play');
+    playButton.classList.add('fa-pause');
+  }).catch((error) => {
+    console.error('Erro ao reproduzir a faixa:', error);
+  });
 }
 
+// Função para pausar a faixa
 function pauseTrack() {
   audio.pause();
   trackName.textContent = 'Pausado';
@@ -32,6 +39,7 @@ function pauseTrack() {
   playButton.classList.add('fa-play');
 }
 
+// Manipuladores de eventos
 playButton.addEventListener('click', () => {
   if (audio.paused) {
     playTrack(currentTrackIndex);
@@ -49,4 +57,3 @@ prevButton.addEventListener('click', () => {
   currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
   playTrack(currentTrackIndex);
 });
-
