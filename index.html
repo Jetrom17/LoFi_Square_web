@@ -10,9 +10,9 @@
 </head>
 <body>
   <div class="container">
-  <a href="https://squarecloud.app/" target="_blank">
-    <img src="./logo.png" alt="Logo" class="logo">
-</a>
+    <a href="https://squarecloud.app/" target="_blank">
+      <img src="./logo.png" alt="Logo" class="logo">
+    </a>
     <div class="controls">
       <i id="prev" class="fas fa-backward control-icon"></i>
       <i id="play" class="fas fa-play control-icon"></i>
@@ -21,8 +21,25 @@
     <div class="current-track">
       <span id="track-name"></span>
     </div>
+
+    <!-- Dialog Sheet -->
+    <div id="download-dialog">
+      <div class="dialog-content">
+        <i class="fas fa-download"></i>
+        <p>Versões disponíveis para download:</p>
+        <div class="dialog-section">
+          <h3>Linux</h3>
+          <button onclick="window.location.href='https://shorturl.is/pWZUX'">AppImage</button>
+          <button onclick="window.location.href='https://shorturl.is/vvMUr'">DEB</button>
+        </div>
+        <div class="dialog-section">
+          <h3>Windows</h3>
+          <button onclick="window.location.href='https://shorturl.is/aPQNZ'">EXE</button>
+        </div>
+      </div>
+    </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
-
