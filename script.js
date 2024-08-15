@@ -63,5 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     const dialog = document.getElementById('download-dialog');
     dialog.classList.add('show');
-  }, 3000);
+
+    // Role suavemente para o modal
+    setTimeout(() => {
+      dialog.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }, 500); // Tempo para garantir que o modal já tenha começado a aparecer
+  }, 3000); // Tempo antes do modal aparecer
 });
