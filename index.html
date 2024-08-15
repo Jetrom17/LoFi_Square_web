@@ -1,45 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json">
-  <title>LoFi Square</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
+    <title>LoFi Square</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
-  <div class="container">
-    <a href="https://squarecloud.app/" target="_blank">
-      <img src="./logo.png" alt="Logo" class="logo">
-    </a>
-    <div class="controls">
-      <i id="prev" class="fas fa-backward control-icon"></i>
-      <i id="play" class="fas fa-play control-icon"></i>
-      <i id="next" class="fas fa-forward control-icon"></i>
-    </div>
-    <div class="current-track">
-      <span id="track-name"></span>
+    <div class="container">
+        <a href="https://squarecloud.app/" target="_blank">
+            <img src="./logo.png" alt="Logo" class="logo">
+        </a>
+        <div class="controls">
+            <i id="prev" class="fas fa-backward control-icon"></i>
+            <i id="play" class="fas fa-play control-icon"></i>
+            <i id="next" class="fas fa-forward control-icon"></i>
+        </div>
+        <div class="current-track">
+            <span id="track-name"></span>
+        </div>
+
+        <!-- Controle de Volume -->
+        <div class="volume-control">
+            <i class="fas fa-volume-down"></i>
+            <input type="range" id="volume-slider" min="0" max="100" value="50">
+            <i class="fas fa-volume-up"></i>
+        </div>
     </div>
 
-    <!-- Dialog Sheet -->
+    <!-- Modal -->
     <div id="download-dialog">
-      <div class="dialog-content">
-        <i class="fas fa-download"></i>
-        <p>Versões disponíveis para download:</p>
-        <div class="dialog-section">
-          <h3>Linux</h3>
-          <button onclick="window.location.href='https://shorturl.is/pWZUX'">AppImage</button>
-          <button onclick="window.location.href='https://shorturl.is/vvMUr'">DEB</button>
+        <div class="dialog-content">
+            <i class="fas fa-download"></i>
+            <p>Versões disponíveis para download:</p>
+            <div class="dialog-section">
+                <h3>Linux</h3>
+                <button onclick="window.location.href='https://shorturl.is/pWZUX'">AppImage</button>
+                <button onclick="window.location.href='https://shorturl.is/vvMUr'">DEB</button>
+            </div>
+            <div class="dialog-section">
+                <h3>Windows</h3>
+                <button onclick="window.location.href='https://shorturl.is/aPQNZ'">EXE</button>
+            </div>
         </div>
-        <div class="dialog-section">
-          <h3>Windows</h3>
-          <button onclick="window.location.href='https://shorturl.is/aPQNZ'">EXE</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <!-- Footer com informações -->
+    <footer>
+        <p>Desenvolvido por Jeiel Lima Miranda.</p>
+        <p>Email/PIX: jeiel.lima.miranda@gmail.com | Website: jeiel.pages.dev</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
