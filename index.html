@@ -11,7 +11,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
-<body>
+<body onload="mostrarContador()">
     <div class="container">
         <a href="https://squarecloud.app/" target="_blank">
             <img src="./logo.png" alt="Logo" class="logo">
@@ -34,26 +34,44 @@
     </div>
 
     <!-- Modal -->
-    <div id="download-dialog">
-        <div class="dialog-content">
-            <i class="fas fa-download"></i>
-            <p>Versões disponíveis para download:</p>
-            <div class="dialog-section">
-                <h3>Linux</h3>
-                <button onclick="window.location.href='https://shorturl.is/pWZUX'">AppImage</button>
-                <button onclick="window.location.href='https://shorturl.is/vvMUr'">DEB</button>
-            </div>
-            <div class="dialog-section">
-                <h3>Windows</h3>
-                <button onclick="window.location.href='https://shorturl.is/aPQNZ'">EXE</button>
-            </div>
+<div id="download-dialog" class="modal">
+    <div class="dialog-content">
+        <i class="fas fa-download"></i>
+        <p>Versões disponíveis para download:</p>
+        <div class="dialog-section">
+            <h3>Linux</h3>
+            <button onclick="window.location.href='https://shorturl.is/RGLml'">AppImage</button>
+            <button onclick="window.location.href='https://shorturl.is/xpvWy'">DEB</button>
         </div>
+        <div class="dialog-section">
+            <h3>Windows</h3>
+            <button onclick="window.location.href='https://shorturl.is/XWBly'">EXE</button>
+        </div>
+        <div class="dialog-section" id="mac-section" style="display: none;">
+            <h3>Mac</h3>
+            <p>Copie o comando abaixo:</p>
+            <pre><code>git clone https://github.com/Jetrom17/LoFi_Square && cd LoFi_Square && npm install && clear && ls && echo 'Para MacOs execute "npm run build -- --mac"'</code></pre>
+        </div>
+        <button id="expand-button" style="background-color: #007BFF; color: white; border: none; padding: 10px 15px; border-radius: 5px;" onclick="toggleMacSection()">Mostrar mais</button>
     </div>
+</div>
+
+<script>
+    // Simulando um contador de visitantes
+    let contador = localStorage.getItem('contador') ? parseInt(localStorage.getItem('contador')) : 0;
+    contador++;
+    localStorage.setItem('contador', contador);
+
+    function mostrarContador() {
+        document.getElementById('contador').innerText = `Visitantes: ${contador}`;
+    }
+</script>
 
     <!-- Footer com informações -->
     <footer>
         <p>Desenvolvido por Jeiel Lima Miranda.</p>
         <p>Email/PIX: jeiel.lima.miranda@gmail.com | Website: jeiel.pages.dev</p>
+        <p id="contador">Visitantes: 0</p>
     </footer>
 
     <script src="script.js"></script>
