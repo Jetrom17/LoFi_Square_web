@@ -77,5 +77,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 block: 'start'
             });
         }, 0); // Tempo para garantir que o modal já tenha começado a aparecer
-    }, 15000); // Tempo antes do modal aparecer
+    }, 3000); // Tempo antes do modal aparecer
 });
+
+function toggleMacSection() {
+    const macSection = document.getElementById('mac-section');
+    const expandButton = document.getElementById('expand-button');
+
+    if (macSection.style.display === 'none') {
+        macSection.style.display = 'block';
+        expandButton.textContent = 'Mostrar menos';
+    } else {
+        macSection.style.display = 'none';
+        expandButton.textContent = 'Mostrar mais';
+    }
+}
